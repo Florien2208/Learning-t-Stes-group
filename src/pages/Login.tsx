@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom"; // Assuming you're using React Router for navigation
+
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
-   const { t } = useTranslation();
+
+  const { t } = useTranslation();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,7 +26,7 @@ const Login: React.FC = () => {
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
               <label htmlFor="email-address" className="sr-only">
-               {t("Email")}
+                {t("Email")}
               </label>
               <input
                 id="email-address"
@@ -54,6 +56,15 @@ const Login: React.FC = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
+          </div>
+
+          <div className="flex justify-center">
+            <Link
+              to="/signup"
+              className="text-indigo-600 hover:text-indigo-900"
+            >
+              {t("Don't have an account? Sign up")}
+            </Link>
           </div>
 
           <div>

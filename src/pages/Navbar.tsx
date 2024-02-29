@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav className="bg-gray-800 flex flex-col md:flex-row justify-between text-white p-4">
+      <nav className="fixed top-0 w-full bg-gray-800 flex flex-col md:flex-row justify-between text-white p-9 z-10">
         <h1 className="text-2xl font-bold md:text-3xl">{t("App")}</h1>
         <ul className="flex space-x-4 md:space-x-8">
           {navLinks.map((link) => (
@@ -54,6 +54,8 @@ const Navbar: React.FC = () => {
           </li>
         </ul>
       </nav>
+      {/* Add some padding to simulate the content scrolling */}
+      <div className="h-20 md:h-40" />
     </>
   );
 };
