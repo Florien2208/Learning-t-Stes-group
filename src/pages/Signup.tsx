@@ -8,38 +8,37 @@ const Signup = () => {
 
   // Define Yup schema for form validation
   const schema = yup.object().shape({
-    fullName: yup.string().required("Full Name is required"),
-    email: yup.string().email("Invalid email").required("Email is required"),
-    password: yup.string().required("Password is required"),
-    country: yup.string().required("Country is required"),
-    phoneNumber: yup.string().required("Phone Number is required"),
+    fullName: yup.string().required(t("yu1")),
+    email: yup.string().email(t("enter email")).required(t("yu2")),
+    password: yup.string().required(t("yu3")),
+    country: yup.string().required(t("yu4")),
+    phoneNumber: yup.string().required(t("yu5")),
   });
 
   const {
-    handleSubmit,
     control,
+    handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(schema), // Use yupResolver from '@hookform/resolvers/yup'
+    resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
-    console.log("Signup with:", data);
-  };
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+    <div className=" flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             {t("Signup")}
           </h2>
         </div>
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit(onSubmit)}>
-          <div className="rounded-md shadow-sm -space-y-px">
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit(() => {})}>
+          <div className="rounded-md shadow-sm space-y-4">
             <div>
-              <label htmlFor="full-name" className="sr-only">
-                {t("Full Name")}
+              <label
+                htmlFor="full-name"
+                className="block text-90 font-medium text-gray-700"
+              >
+                {t("yui1")}
               </label>
               <Controller
                 name="fullName"
@@ -50,15 +49,22 @@ const Signup = () => {
                     id="full-name"
                     type="text"
                     autoComplete="name"
-                    placeholder={t("Full Name")}
-                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    placeholder={t("yui1")}
+                    className="w-full h-12 border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 block px-3 py-2 rounded-md shadow-sm text-sm placeholder-gray-400"
                   />
                 )}
               />
-              {errors.fullName && <p>{errors.fullName.message}</p>}
+              {errors.fullName && (
+                <p className="text-red-500 text-50 italic">
+                  {errors.fullName.message}
+                </p>
+              )}
             </div>
             <div>
-              <label htmlFor="email-address" className="sr-only">
+              <label
+                htmlFor="email-address"
+                className="block text-90 font-medium text-gray-700"
+              >
                 {t("Email")}
               </label>
               <Controller
@@ -70,36 +76,50 @@ const Signup = () => {
                     id="email-address"
                     type="email"
                     autoComplete="email"
-                    placeholder={t("Email address")}
-                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    placeholder={t("Email")}
+                    className="h-12 border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 block w-full px-3 py-2 rounded-md shadow-sm text-sm placeholder-gray-400"
                   />
                 )}
               />
-              {errors.email && <p>{errors.email.message}</p>}
+              {errors.email && (
+                <p className="text-red-500 text-50 italic">
+                  {errors.email.message}
+                </p>
+              )}
             </div>
             <div>
-              <label htmlFor="password" className="sr-only">
-                {t("Password")}
+              <label
+                htmlFor="full-name"
+                className="block text-90 font-medium text-gray-700"
+              >
+                {t("yui2")}
               </label>
               <Controller
-                name="password"
+                name="phoneNumber"
                 control={control}
                 render={({ field }) => (
                   <input
                     {...field}
-                    id="password"
-                    type="password"
-                    autoComplete="new-password"
-                    placeholder={t("Password")}
-                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    id="phoneNumber"
+                    type="text"
+                    autoComplete="phoneNumber"
+                    placeholder={t("yui2")}
+                    className="h-12 border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 block w-full px-3 py-2 rounded-md shadow-sm text-sm placeholder-gray-400"
                   />
                 )}
               />
-              {errors.password && <p>{errors.password.message}</p>}
+              {errors.phoneNumber && (
+                <p className="text-red-500 text-50 italic">
+                  {errors.phoneNumber.message}
+                </p>
+              )}
             </div>
             <div>
-              <label htmlFor="country" className="sr-only">
-                {t("Country")}
+              <label
+                htmlFor="full-name"
+                className="block text-90 font-medium text-gray-700"
+              >
+                {t("yui3")}
               </label>
               <Controller
                 name="country"
@@ -110,39 +130,50 @@ const Signup = () => {
                     id="country"
                     type="text"
                     autoComplete="country"
-                    placeholder={t("Country")}
-                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    placeholder={t("yui3")}
+                    className="h-12 border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 block w-full px-3 py-2 rounded-md shadow-sm text-sm placeholder-gray-400"
                   />
                 )}
               />
-              {errors.country && <p>{errors.country.message}</p>}
+              {errors.country && (
+                <p className="text-red-500 text-50 italic">
+                  {errors.country.message}
+                </p>
+              )}
             </div>
             <div>
-              <label htmlFor="phone-number" className="sr-only">
-                {t("Phone Number")}
+              <label
+                htmlFor="password"
+                className="block text-90 font-medium text-gray-700"
+              >
+                {t("yui4")}
               </label>
               <Controller
-                name="phoneNumber"
+                name="password"
                 control={control}
                 render={({ field }) => (
                   <input
                     {...field}
-                    id="phone-number"
-                    type="tel"
-                    autoComplete="tel"
-                    placeholder={t("Phone Number")}
-                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    id="password"
+                    type="password"
+                    autoComplete="email"
+                    placeholder={t("yui4")}
+                    className="h-12 border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 block w-full px-3 py-2 rounded-md shadow-sm text-sm placeholder-gray-400"
                   />
                 )}
               />
-              {errors.phoneNumber && <p>{errors.phoneNumber.message}</p>}
+              {errors.password && (
+                <p className="text-red-500 text-50 italic">
+                  {errors.password.message}
+                </p>
+              )}
             </div>
+            {/* Repeat similar pattern for other input fields */}
           </div>
-
-          <div>
+          <div className="mt-6">
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               {t("Signup")}
             </button>
@@ -154,3 +185,4 @@ const Signup = () => {
 };
 
 export default Signup;
+
