@@ -1,26 +1,30 @@
-import React, { useState } from "react";
+import { useForm, Controller } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
-const Signup: React.FC = () => {
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [country, setCountry] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-
+const Signup = () => {
   const { t } = useTranslation();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Add your signup logic here
-    console.log(
-      "Signup with:",
-      fullName,
-      email,
-      password,
-      country,
-      phoneNumber
-    );
+  // Define Yup schema for form validation
+  const schema = yup.object().shape({
+    fullName: yup.string().required("Full Name is required"),
+    email: yup.string().email("Invalid email").required("Email is required"),
+    password: yup.string().required("Password is required"),
+    country: yup.string().required("Country is required"),
+    phoneNumber: yup.string().required("Phone Number is required"),
+  });
+
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema), // Use yupResolver from '@hookform/resolvers/yup'
+  });
+
+  const onSubmit = (data) => {
+    console.log("Signup with:", data);
   };
 
   return (
@@ -31,87 +35,107 @@ const Signup: React.FC = () => {
             {t("Signup")}
           </h2>
         </div>
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit(onSubmit)}>
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
               <label htmlFor="full-name" className="sr-only">
                 {t("Full Name")}
               </label>
-              <input
-                id="full-name"
-                name="full-name"
-                type="text"
-                autoComplete="name"
-                required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder={t("Full Name")}
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
+              <Controller
+                name="fullName"
+                control={control}
+                render={({ field }) => (
+                  <input
+                    {...field}
+                    id="full-name"
+                    type="text"
+                    autoComplete="name"
+                    placeholder={t("Full Name")}
+                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  />
+                )}
               />
+              {errors.fullName && <p>{errors.fullName.message}</p>}
             </div>
             <div>
               <label htmlFor="email-address" className="sr-only">
                 {t("Email")}
               </label>
-              <input
-                id="email-address"
+              <Controller
                 name="email"
-                type="email"
-                autoComplete="email"
-                required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder={t("Email address")}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                control={control}
+                render={({ field }) => (
+                  <input
+                    {...field}
+                    id="email-address"
+                    type="email"
+                    autoComplete="email"
+                    placeholder={t("Email address")}
+                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  />
+                )}
               />
+              {errors.email && <p>{errors.email.message}</p>}
             </div>
             <div>
               <label htmlFor="password" className="sr-only">
                 {t("Password")}
               </label>
-              <input
-                id="password"
+              <Controller
                 name="password"
-                type="password"
-                autoComplete="new-password"
-                required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder={t("Password")}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                control={control}
+                render={({ field }) => (
+                  <input
+                    {...field}
+                    id="password"
+                    type="password"
+                    autoComplete="new-password"
+                    placeholder={t("Password")}
+                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  />
+                )}
               />
+              {errors.password && <p>{errors.password.message}</p>}
             </div>
             <div>
               <label htmlFor="country" className="sr-only">
                 {t("Country")}
               </label>
-              <input
-                id="country"
+              <Controller
                 name="country"
-                type="text"
-                autoComplete="country"
-                required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder={t("Country")}
-                value={country}
-                onChange={(e) => setCountry(e.target.value)}
+                control={control}
+                render={({ field }) => (
+                  <input
+                    {...field}
+                    id="country"
+                    type="text"
+                    autoComplete="country"
+                    placeholder={t("Country")}
+                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  />
+                )}
               />
+              {errors.country && <p>{errors.country.message}</p>}
             </div>
             <div>
               <label htmlFor="phone-number" className="sr-only">
                 {t("Phone Number")}
               </label>
-              <input
-                id="phone-number"
-                name="phone-number"
-                type="tel"
-                autoComplete="tel"
-                required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder={t("Phone Number")}
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
+              <Controller
+                name="phoneNumber"
+                control={control}
+                render={({ field }) => (
+                  <input
+                    {...field}
+                    id="phone-number"
+                    type="tel"
+                    autoComplete="tel"
+                    placeholder={t("Phone Number")}
+                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  />
+                )}
               />
+              {errors.phoneNumber && <p>{errors.phoneNumber.message}</p>}
             </div>
           </div>
 
