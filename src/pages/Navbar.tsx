@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useCounterStore } from "../zustand/store";
 
 interface NavLink {
   label: string;
@@ -26,11 +27,13 @@ const Navbar: React.FC = () => {
     i18n.changeLanguage(code);
     setSelectedLanguage(code);
   };
+  const { count, } = useCounterStore();
 
   return (
     <>
       <nav className="fixed top-0 w-full bg-gray-800 flex flex-col md:flex-row justify-between text-white p-9 z-10">
         <h1 className="text-2xl font-bold md:text-3xl">{t("App")}</h1>
+
         <ul className="flex space-x-4 md:space-x-8">
           {navLinks.map((link) => (
             <li key={link.label} className="hover:text-gray-400">
@@ -40,6 +43,7 @@ const Navbar: React.FC = () => {
             </li>
           ))}
           <li className="hover:text-gray-400">
+            {count}
             <select
               className="active:text-primary bg-transparent border-none"
               value={selectedLanguage}
