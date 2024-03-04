@@ -1,10 +1,19 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useCounterStore } from "../zustand/store";
+import useSWR from "swr";
 
+interface UserData {
+  name: string;
+}
+
+const fetcher = (args: string) =>
+  fetch(args).then((response) => response.json());
 const HomePage = () => {
   const { t } = useTranslation();
   const { count, increment, decrement } = useCounterStore();
+  const { data, error } = useSWR("", fetcher);
+  if (error) return <h1>{error}</h1>;
   return (
     <>
       <div className="flex">
@@ -25,8 +34,19 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      <div>
+        {data ? (
+          data.map((user: UserData) => {
+            return <h1>{user.name}</h1>;
+          })
+        ) : (
+          <h1>loading...</h1>
+        )}
+      </div>
       <div className="flex flex-col justify-center items-center">
-        <p className="text-xl font-semibold mb-2">{t("Count")} {count}</p>
+        <p className="text-xl font-semibold mb-2">
+          {t("Count")} {count}
+        </p>
         <div className="flex space-x-4">
           <button
             onClick={increment}
