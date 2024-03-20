@@ -101,7 +101,7 @@ const Login: React.FC = () => {
               to="/signup"
               className="text-indigo-600 hover:text-indigo-900"
             >
-              {t("Don't have an account? Sign up")}
+              {t("don")}
             </Link>
           </div>
 

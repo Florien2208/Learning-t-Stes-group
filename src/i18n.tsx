@@ -37,6 +37,7 @@ i18next
           yui2: "Phone Number",
           yui3: "Country",
           yui4: "Password",
+          don: "Don't have an account? Sign up",
         },
       },
       fr: {
@@ -69,6 +70,7 @@ i18next
           yui2: "Telephone",
           yui3: "Pay",
           yui4: "Mot de Passe",
+          don: "Vous n'avez pas de compte ? Inscrivez-vous",
         },
       },
       kin: {
@@ -100,6 +102,7 @@ i18next
           yui2: "Telophone",
           yui3: "IGIHUGU CYAWE",
           yui4: "SHIRAMO IJAMBO BANGA",
+          don: "Niba wibagiwe ijambo banga kanda hano",
         },
       },
     },
