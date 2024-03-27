@@ -40,7 +40,10 @@ const HomePage = () => {
             return <h1>{user.name}</h1>;
           })
         ) : (
-          <h1>loading...</h1>
+          <div>
+            <h1>this made by dj flo</h1>
+            <Link to="table" className="bg-blue-700">table</Link>
+          </div>
         )}
       </div>
       <div className="flex flex-col justify-center items-center">

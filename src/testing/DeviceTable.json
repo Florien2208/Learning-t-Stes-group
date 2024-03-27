@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "location": "Location 1",
+    "deviceCode": "DC001",
+    "deviceName": "Device 1",
+    "plantType": "Type A",
+    "status": "Pending"
+  },
+  {
+    "id": 2,
+    "location": "Location 2",
+    "deviceCode": "DC002",
+    "deviceName": "Device 2",
+    "plantType": "Type B",
+    "status": "Active"
+  },
+  {
+    "id": 3,
+    "location": "Location 3",
+    "deviceCode": "DC003",
+    "deviceName": "Device 3",
+    "plantType": "Type C",
+    "status": "Inactive"
+  },
+  {
+    "id": 4,
+    "location": "Location 4",
+    "deviceCode": "DC004",
+    "deviceName": "Device 4",
+    "plantType": "Type D",
+    "status": "Pending"
+  },
+  {
+    "id": 5,
+    "location": "Location 5",
+    "deviceCode": "DC005",
+    "deviceName": "Device 5",
+    "plantType": "Type E",
+    "status": "Active"
+  },
+  {
+    "id": 6,
+    "location": "Location 6",
+    "deviceCode": "DC006",
+    "deviceName": "Device 6",
+    "plantType": "Type F",
+    "status": "Pending"
+  },
+  {
+    "id": 7,
+    "location": "Location 7",
+    "deviceCode": "DC007",
+    "deviceName": "Device 7",
+    "plantType": "Type G",
+    "status": "Active"
+  },
+  {
+    "id": 8,
+    "location": "Location 8",
+    "deviceCode": "DC008",
+    "deviceName": "Device 8",
+    "plantType": "Type H",
+    "status": "Inactive"
+  },
+  {
+    "id": 9,
+    "location": "Location 9",
+    "deviceCode": "DC009",
+    "deviceName": "Device 9",
+    "plantType": "Type I",
+    "status": "Pending"
+  },
+  {
+    "id": 9,
+    "location": "Location 9",
+    "deviceCode": "DC009",
+    "deviceName": "Device 9",
+    "plantType": "Type I",
+    "status": "Pending"
+  },
+  {
+    "id": 9,
+    "location": "Location 9",
+    "deviceCode": "DC009",
+    "deviceName": "Device 9",
+    "plantType": "Type I",
+    "status": "Pending"
+  },
+  {
+    "id": 9,
+    "location": "Location 9",
+    "deviceCode": "DC009",
+    "deviceName": "Device 9",
+    "plantType": "Type I",
+    "status": "Pending"
+  },
+  {
+    "id": 10,
+    "location": "Location 10",
+    "deviceCode": "DC010",
+    "deviceName": "Device 10",
+    "plantType": "Type J",
+    "status": "Active"
+  },
+  {
+    "id": 9,
+    "location": "Location 9",
+    "deviceCode": "DC009",
+    "deviceName": "Device 9",
+    "plantType": "Type I",
+    "status": "Pending"
+  },
+  {
+    "id": 9,
+    "location": "Location 9",
+    "deviceCode": "DC009",
+    "deviceName": "Device 9",
+    "plantType": "Type I",
+    "status": "Pending"
+  },
+  {
+    "id": 9,
+    "location": "Location 9",
+    "deviceCode": "DC009",
+    "deviceName": "Device 9",
+    "plantType": "Type I",
+    "status": "Pending"
+  },
+  {
+    "id": 9,
+    "location": "Location 9",
+    "deviceCode": "DC009",
+    "deviceName": "Device 9",
+    "plantType": "Type I",
+    "status": "Pending"
+  },
+  {
+    "id": 9,
+    "location": "Location 9",
+    "deviceCode": "DC009",
+    "deviceName": "Device 9",
+    "plantType": "Type I",
+    "status": "Pending"
+  },
+  {
+    "id": 9,
+    "location": "Location 9",
+    "deviceCode": "DC009",
+    "deviceName": "Device 9",
+    "plantType": "Type I",
+    "status": "Pending"
+  },
+  {
+    "id": 9,
+    "location": "Location 9",
+    "deviceCode": "DC009",
+    "deviceName": "Device 9",
+    "plantType": "Type I",
+    "status": "Pending"
+  }
+]
