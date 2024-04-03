@@ -21,7 +21,7 @@ const DeviceConfig = () => {
   });
 
   // State to control modal visibility
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
 
   const columns = [
@@ -57,6 +57,38 @@ const DeviceConfig = () => {
       accessorKey: "plantType",
       Header: "Plant Type",
     },
+    {
+      accessorKey: "plantType",
+      Header: "Plant Type",
+    },
+    {
+      accessorKey: "plantType",
+      Header: "Plant Type",
+    },
+    {
+      accessorKey: "plantType",
+      Header: "Plant Type",
+    },
+    {
+      accessorKey: "plantType",
+      Header: "Plant Type",
+    },
+    {
+      accessorKey: "plantType",
+      Header: "Plant Type",
+    },
+    {
+      accessorKey: "plantType",
+      Header: "Plant Type",
+    },
+    {
+      accessorKey: "plantType",
+      Header: "Plant Type",
+    },
+    {
+      accessorKey: "plantType",
+      Header: "Plant Type",
+    },
     // New column for status
     {
       accessorKey: "status",
@@ -75,43 +107,43 @@ const DeviceConfig = () => {
         <div className="flex space-x-1">
           <FiPlusCircle
             className="text-green-500 cursor-pointer"
-            onClick={() => handleAssign(row.original.id)}
+            // onClick={() => handleAssign(row.original.id)}
           />
           <FiTrash2
             className="text-red-500 cursor-pointer"
-            onClick={() => handleDelete(row.original.id)}
+            // onClick={() => handleDelete(row.original.id)}
           />
           <FiEdit
             className="text-blue-500 cursor-pointer"
-            onClick={() => handleEdit(true)}
+            // onClick={() => handleEdit(true)}
           />
         </div>
       ),
     },
   ];
 
-  // Function to handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add logic to handle form submission
-    console.log("Form submitted");
-    // Close modal after form submission
-    setShowModal(false);
-  };
+  // // Function to handle form submission
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Add logic to handle form submission
+  //   console.log("Form submitted");
+  //   // Close modal after form submission
+  //   setShowModal(false);
+  // };
 
-  const handleEdit = (id: string) => {
-    // Logic to fetch device information for editing
-    console.log("Edit", id);
-    const deviceToEdit = data.find((device) => device.id === id);
-    if (deviceToEdit) {
-      setDeviceCode(deviceToEdit.deviceCode);
-      setCropType(deviceToEdit.cropType);
-      setDeviceName(deviceToEdit.deviceName);
-      setLocation(deviceToEdit.location);
-    }
-    // Set modal visibility to true
-    setShowEditModal(true);
-  };
+  // const handleEdit = (id: string) => {
+  //   // Logic to fetch device information for editing
+  //   console.log("Edit", id);
+  //   const deviceToEdit = data.find((device) => device.id === id);
+  //   if (deviceToEdit) {
+  //     setDeviceCode(deviceToEdit.deviceCode);
+  //     setCropType(deviceToEdit.cropType);
+  //     setDeviceName(deviceToEdit.deviceName);
+  //     setLocation(deviceToEdit.location);
+  //   }
+  //   // Set modal visibility to true
+  //   setShowEditModal(true);
+  // };
 
   const table = useReactTable({
     data,
@@ -124,15 +156,15 @@ const DeviceConfig = () => {
     },
   });
 
-  const handleDelete = (id: string) => {
-    // Implement delete functionality here
-    console.log("Delete", id);
-  };
+  // const handleDelete = (id: string) => {
+  //   // Implement delete functionality here
+  //   console.log("Delete", id);
+  // };
 
-  const handleAssign = (id: string) => {
-    // Implement assign functionality here
-    console.log("Assign", id);
-  };
+  // const handleAssign = (id: string) => {
+  //   // Implement assign functionality here
+  //   console.log("Assign", id);
+  // };
 
   return (
     <div className="p-4 bg-gray-100">
@@ -141,7 +173,8 @@ const DeviceConfig = () => {
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div className="bg-white p-8 rounded shadow-lg z-10 w-full max-w-xl">
             <h2 className="text-2xl font-bold mb-4">Update the device</h2>
-            <form onSubmit={handleSubmit}>
+            {/* <form onSubmit={handleSubmit}> */}
+            <form >
               <div className="mb-4">
                 <label
                   htmlFor="deviceCode"
@@ -235,7 +268,7 @@ const DeviceConfig = () => {
         />
         <button
           className="bg-[#00743F] hover:bg-[#00743F] text-white font-bold py-2 px-4 rounded"
-          onClick={() => setShowModal(true)}
+          // onClick={() => setShowModal(true)}
         >
           Add Device
         </button>
@@ -275,7 +308,7 @@ const DeviceConfig = () => {
           </tbody>
         </table>
       </div>
-      {showModal && (
+      {/* {showModal && (
         <div className="fixed inset-0 flex justify-center items-center z-50">
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div className="bg-white p-8 rounded shadow-lg z-10 w-full max-w-xl">
@@ -361,7 +394,7 @@ const DeviceConfig = () => {
             </form>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
