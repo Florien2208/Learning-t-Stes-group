@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
-    "@tanstack/react-table": "^8.15.0",
+    "@tanstack/qwik-table": "^8.15.3",
+    "@tanstack/react-table": "^8.15.3",
     "i18next": "^23.10.0",
     "i18next-browser-languagedetector": "^7.2.0",
     "react": "^18.2.0",
