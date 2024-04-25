@@ -174,7 +174,7 @@ const DeviceConfig = () => {
           <div className="bg-white p-8 rounded shadow-lg z-10 w-full max-w-xl">
             <h2 className="text-2xl font-bold mb-4">Update the device</h2>
             {/* <form onSubmit={handleSubmit}> */}
-            <form >
+            <form>
               <div className="mb-4">
                 <label
                   htmlFor="deviceCode"
@@ -206,8 +206,9 @@ const DeviceConfig = () => {
                   <option value="crop1">Crop 1</option>
                   <option value="crop2">Crop 2</option>
                   <option value="crop3">Crop 3</option>
-                  <option value="crop3">Crop 3</option>
-                  <option value="crop3">Crop 3</option>
+                  <option value="crop3">Crop 4</option>
+                  <option value="crop3">Crop 5</option>
+                  <option value="crop3">Crop 6</option>
                 </select>
               </div>
 

@@ -18,7 +18,7 @@ i18next
           Signupdes: "Sign in to your account",
           Email: "enter email",
           welcomedes:
-            "Welcome to the electrifying world of DJ Flo! Prepare to embark on a journey of pulsating beats, infectious rhythms, and unforgettable melodies. Dive into a realm where music transcends boundaries and ignites the dance floor. Get ready to groove with DJ Flo!",
+            "Welcome to the electrifying world of DJ! Prepare to embark on a journey of pulsating beats, infectious rhythms, and unforgettable melodies. Dive into a realm where music transcends boundaries and ignites the dance floor. Get ready to groove with DJ Flo!",
           GetStart: "Get Started",
           wel: "Welcome to Our Website",
           Aboutd:
@@ -37,7 +37,7 @@ i18next
           yui2: "Phone Number",
           yui3: "Country",
           yui4: "Password",
-          don: "Don't have an account? Sign up",
+          don: "Don't have an account?    Sign up",
         },
       },
       fr: {
