@@ -95,7 +95,7 @@ const DeviceConfig = () => {
       Header: "Status",
       cell: () => (
         <div className="bg-[#00743F] text-white rounded py-1 text-center">
-          Pending
+          Pending data
         </div>
       ),
     },
